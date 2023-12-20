@@ -22,10 +22,12 @@ export const FormularioComponent = () => {
     return (
         <div>
             <h1>Formularios con React</h1>
-
-            <div className = "info_usuario label label-gray">
-                {usuario.nombre} {usuario.apellido} es un {usuario.genero} y su biografía es: {usuario.bio}
+            { usuario.bio && usuario.nombre && usuario.apellido && usuario.bio.length >= 1 &&
+            (
+            <div className = "info_usuario label label-pink">
+                {usuario.nombre} {usuario.apellido} es {usuario.genero} y su biografía es: {usuario.bio}
             </div>
+            )}
 
 
             <form onSubmit = {conseguirDatosFormulario}>
